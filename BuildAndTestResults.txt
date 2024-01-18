@@ -1,0 +1,125 @@
+cd /home/user/NetBeansProjects/software-engineer-test-v1; JAVA_HOME=/usr/lib/jvm/jdk-17-oracle-x64 /snap/netbeans/89/netbeans/java/maven/bin/mvn --no-transfer-progress install
+Scanning for projects...
+
+---------------< uk.gov.dwp.uc.pairtest:cinema-tickets >----------------
+Building cinema-tickets 1.0.0
+  from pom.xml
+--------------------------------[ jar ]---------------------------------
+
+--- resources:3.3.1:resources (default-resources) @ cinema-tickets ---
+Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+skip non existing resourceDirectory /home/user/NetBeansProjects/software-engineer-test-v1/src/main/resources
+
+--- compiler:3.1:compile (default-compile) @ cinema-tickets ---
+Changes detected - recompiling the module!
+File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+Compiling 10 source files to /home/user/NetBeansProjects/software-engineer-test-v1/target/classes
+
+--- resources:3.3.1:testResources (default-testResources) @ cinema-tickets ---
+Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+Copying 1 resource from src/test/resources to target/test-classes
+
+--- compiler:3.1:testCompile (default-testCompile) @ cinema-tickets ---
+Changes detected - recompiling the module!
+File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+Compiling 3 source files to /home/user/NetBeansProjects/software-engineer-test-v1/target/test-classes
+/home/user/NetBeansProjects/software-engineer-test-v1/src/test/java/TestTicketServiceImpl.java: /home/user/NetBeansProjects/software-engineer-test-v1/src/test/java/TestTicketServiceImpl.java uses or overrides a deprecated API.
+/home/user/NetBeansProjects/software-engineer-test-v1/src/test/java/TestTicketServiceImpl.java: Recompile with -Xlint:deprecation for details.
+
+--- surefire:3.1.2:test (default-test) @ cinema-tickets ---
+Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestTicketServiceImpl
+
+Start Tests...
+
+Test for TicketTypeRequest[] is null
+
+Input Data:
+AccountId: 1
+TicketTypeRequest[]: Null
+Exception Encountered: uk.gov.dwp.uc.pairtest.exception.InvalidPurchaseException
+
+Continue testing...
+
+Test for invalid account id - AccountId: 0 >= minimum AccountId: 1
+
+Input Data:
+AccountId: 0
+TicketTypeRequest[]: Not Null
+Ticket: ADULT, Num: 1
+Ticket: CHILD, Num: 1
+Ticket: INFANT, Num: 1
+Exception Encountered: uk.gov.dwp.uc.pairtest.exception.InvalidPurchaseException
+
+Continue testing...
+
+Test for minimum adults - number of Adults: 0 < minimum Adults: 1
+
+Input Data:
+AccountId: 1
+TicketTypeRequest[]: Not Null
+Ticket: ADULT, Num: 0
+Exception Encountered: uk.gov.dwp.uc.pairtest.exception.InvalidPurchaseException
+
+Continue testing...
+
+Test for not enough adults - number of Adults: 1 >= number of Infants: 2
+
+Input Data:
+AccountId: 1
+TicketTypeRequest[]: Not Null
+Ticket: ADULT, Num: 1
+Ticket: INFANT, Num: 2
+Exception Encountered: uk.gov.dwp.uc.pairtest.exception.InvalidPurchaseException
+
+Continue testing...
+
+Test for too many tickets - number of Tickets: 21 > maximum Tickets: 20
+
+Input Data:
+AccountId: 1
+TicketTypeRequest[]: Not Null
+Ticket: ADULT, Num: 19
+Ticket: CHILD, Num: 1
+Ticket: INFANT, Num: 1
+Exception Encountered: uk.gov.dwp.uc.pairtest.exception.InvalidPurchaseException
+
+Continue testing...
+
+Test for valid purchase request - Adults: 2, Children: 2, Infants: 1, Seats: 4, Payment (pence): 6000
+
+Input Data:
+AccountId: 1
+TicketTypeRequest[]: Not Null
+Ticket: ADULT, Num: 2
+Ticket: CHILD, Num: 2
+Ticket: INFANT, Num: 1
+
+Output Data:
+Adults: 2, Children: 2, Infants: 1, Seats: 4, Payment (pence): 6000
+
+End of tests
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s -- in TestTicketServiceImpl
+
+Results:
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+
+--- jar:3.3.0:jar (default-jar) @ cinema-tickets ---
+Building jar: /home/user/NetBeansProjects/software-engineer-test-v1/target/cinema-tickets-1.0.0.jar
+
+--- install:3.1.1:install (default-install) @ cinema-tickets ---
+Installing /home/user/NetBeansProjects/software-engineer-test-v1/pom.xml to /home/user/.m2/repository/uk/gov/dwp/uc/pairtest/cinema-tickets/1.0.0/cinema-tickets-1.0.0.pom
+Installing /home/user/NetBeansProjects/software-engineer-test-v1/target/cinema-tickets-1.0.0.jar to /home/user/.m2/repository/uk/gov/dwp/uc/pairtest/cinema-tickets/1.0.0/cinema-tickets-1.0.0.jar
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  1.880 s
+Finished at: 2024-01-18T10:01:31Z
+------------------------------------------------------------------------
